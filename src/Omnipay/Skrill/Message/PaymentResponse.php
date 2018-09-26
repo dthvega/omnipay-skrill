@@ -73,7 +73,7 @@ class PaymentResponse extends AbstractResponse implements RedirectResponseInterf
      */
     public function getStatus()
     {
-        return (string) $this->data->getHeader('X-Skrill-Status')[0];
+        return ; //(string) $this->data->getHeader('X-Skrill-Status')[0];
     }
 
     /**
@@ -83,8 +83,8 @@ class PaymentResponse extends AbstractResponse implements RedirectResponseInterf
      */
     public function getCode()
     {
-        $statusTokens = explode(':', $this->getStatus());
-        return array_shift($statusTokens) ?: null;
+        //$statusTokens = explode(':', $this->getStatus());
+        return; //array_shift($statusTokens) ?: null;
     }
 
     /**
@@ -94,7 +94,7 @@ class PaymentResponse extends AbstractResponse implements RedirectResponseInterf
      */
     public function getMessage()
     {
-        $statusTokens = explode(':', $this->getStatus());
-        return array_pop($statusTokens) ?: null;
+        //$statusTokens = explode(':', $this->getStatus());
+        return ;//array_pop($statusTokens) ?: null;
     }
 }
